@@ -1,7 +1,6 @@
 package com.aston;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -42,7 +41,7 @@ public class AppTest {
     public void testBlockTitle() {
             WebElement titleElement = driver.findElement(By.xpath("//div[@class=\"pay__wrapper\"]//h2"));
             String text = titleElement.getText();
-            assertEquals("Онлайн пополнение\nбез комиссии", text, "Названия не совпадают.");
+            assertEquals("Онлайн пополнение\nбез комиссии", text, "Названия не совпадают");
     }
 
     @Test
@@ -58,17 +57,17 @@ public class AppTest {
 
         for (String altText : logosAltTexts) {
             WebElement logo = driver.findElement(By.xpath("//img[@alt='" + altText + "']"));
-            assertNotNull(logo, "Логотип " + altText + " не найден.");
+            assertNotNull(logo, "Логотип " + altText + " не найден");
         }
     }
 
     @Test
-    @DisplayName("Проверка работы ссылки «Подробнее о сервисе»")
+    @DisplayName("Проверка работы ссылки \"Подробнее о сервисе\"")
     public void testMoreInfoLink() {
         WebElement moreInfoLink = driver.findElement(By.xpath("//div[@class=\"pay__wrapper\"]//a"));
         moreInfoLink.click();
         assertEquals("https://www.mts.by/help/poryadok-oplaty-i-bezopasnost-internet-platezhey/",
-                driver.getCurrentUrl(), "URL страницы не соответствует ожидаемому.");
+                driver.getCurrentUrl(), "URL страницы не соответствует ожидаемому");
     }
 
     @Test
@@ -83,6 +82,6 @@ public class AppTest {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.className("bepaid-iframe")));
         WebElement paymentContainer = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class=\"payment-page__container\"]")));
-        assertTrue(paymentContainer.isDisplayed(), "Окно оплаты не отображается после нажатия на кнопку «Продолжить»");
+        assertTrue(paymentContainer.isDisplayed(), "Окно оплаты не отображается после нажатия на кнопку \"Продолжить\"");
     }
 }
