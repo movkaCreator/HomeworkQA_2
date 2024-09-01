@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestMts {
+public class AppTest {
     private static WebDriver driver;
 
     @BeforeAll
