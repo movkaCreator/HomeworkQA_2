@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AppTest {
+public class TestMts {
     private static WebDriver driver;
 
     @BeforeAll
@@ -76,7 +76,7 @@ public class AppTest {
         WebElement phoneNumber = driver.findElement(By.id("connection-phone"));
         phoneNumber.sendKeys("297777777");
         WebElement connectionSum = driver.findElement(By.id("connection-sum"));
-        connectionSum.sendKeys("500 ");
+        connectionSum.sendKeys("100");
         WebElement buttonContinue = driver.findElement(By.xpath("//*[@id=\"pay-connection\"]/button"));
         buttonContinue.click();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
