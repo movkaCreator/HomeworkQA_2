@@ -1,6 +1,5 @@
 package com.aston;
 
-import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,7 +34,6 @@ public class TestMts {
     }
 
     @Test
-    @Step("1")
     @DisplayName("Проверка названия указанного блока")
     public void testBlockTitle() {
         String text = pageMts.getNameOfBlock();
@@ -43,7 +41,6 @@ public class TestMts {
     }
 
     @Test
-    @Step("2")
     @DisplayName("Проверка наличия логотипов платежных систем")
     public void testPaymentSystemLogos() {
         assertAll(
@@ -56,7 +53,6 @@ public class TestMts {
     }
 
     @Test
-    @Step("3")
     @DisplayName("Проверка работы ссылки «Подробнее о сервисе»")
     public void testMoreInfoLink() {
         pageMts.clickLinkOfPayingOrder();
@@ -64,7 +60,6 @@ public class TestMts {
                 pageMts.getTitleOfPageWithPayingOrder(), "URL страницы не соответствует ожидаемому.");
     }
 
-    @Step("4")
     @Test
     @DisplayName("Проверка работы кнопки \"Продолжить\"")
     public void testContinueButton() {
@@ -75,7 +70,6 @@ public class TestMts {
     }
 
     @Test
-    @Step("5")
     @DisplayName("Проверка плейсхолдеров в графе \"Услуги связи\"")
     public void checkPlaceholdersForCommunicationServices() {
         assertAll(
@@ -91,7 +85,6 @@ public class TestMts {
     }
 
     @Test
-    @Step("6")
     @DisplayName("Проверка плейсхолдеров в графе \"Домашний интернет\"")
     public void checkPlaceholdersForHomeInternet() {
         pageMts.clickSelectButton();
@@ -109,7 +102,6 @@ public class TestMts {
     }
 
     @Test
-    @Step("7")
     @DisplayName("Проверка плейсхолдеров в графе \"Рассрочка\"")
     public void checkPlaceholdersForInstallment() {
         pageMts.clickSelectButton();
@@ -127,7 +119,6 @@ public class TestMts {
     }
 
     @Test
-    @Step("8")
     @DisplayName("Проверка плейсхолдеров в графе \"Задолженность\"")
     public void checkPlaceholdersForDebt() {
         pageMts.clickSelectButton();
@@ -145,7 +136,6 @@ public class TestMts {
     }
 
     @Test
-    @Step("9")
     @DisplayName("Проверка корректного отбражения всех полей в графе \"Услуги связи\"")
     public void fullCheckCommunicationServices() {
         pageMts.sendPhoneAndSumAndClickContinue();
